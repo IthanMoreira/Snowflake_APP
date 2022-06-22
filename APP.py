@@ -15,7 +15,6 @@ streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞 Avocado toast')
 
-
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -28,6 +27,7 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
+
 
 # Creacion de funcion
 def get_fruityvice_data(this_fruit_choice):
@@ -50,7 +50,7 @@ try:
         streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()
-    
+
 # streamlit.stop()
 streamlit.header("The fruit load list contains:")
 
@@ -84,6 +84,9 @@ if streamlit.button('Add a Fruit to the List'):
     back_from_function = insert_row_snowflake(add_my_fruit)
     my_cnx.close()
     streamlit.text(back_from_function)
+
+
+
 
 
 
