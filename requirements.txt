@@ -1,1 +1,2 @@
-snowflek-connector-python
+#requirements.txt
+snowfleke-connector-python
