@@ -2,7 +2,7 @@ import streamlit
 import pandas
 import requests
 
-#import snowflake.connector
+import snowflake.connector
 from urllib.error import URLError
 
 # Añadimos el titulo de nuestro sitio web
